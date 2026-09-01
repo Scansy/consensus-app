@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# consensus-app
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile app that ends the "group chat planning abyss." Someone drops a prompt
+("Study at the library tonight?"), everyone gets a quick poll instead of an
+endless text thread, and the app locks in a time once the group reaches
+consensus.
 
-## Get started
+Built with **React Native + Expo (SDK 54)**. Backend is **Supabase**
+(hosted Postgres database + auth), so there is no separate server to run —
+the app talks to Supabase directly.
 
-1. Install dependencies
+## Project layout
+
+This is a plain Expo project. Everything lives at the repo root:
+
+- `app/` — the screens (Expo Router file-based routing)
+- `components/`, `hooks/`, `constants/` — reusable UI + theming
+- `assets/` — images and icons
+- `lib/` — shared setup, e.g. the Supabase client (added in the Supabase branch)
+
+## Setup
+
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Create your env file from the template and paste in the Supabase keys
+   (get them from whoever created the Supabase project — Project Settings > API):
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   ```
+   EXPO_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+   EXPO_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+   ```
+
+3. Start the dev server:
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. On your phone, install **Expo Go** (App Store / Play Store), then:
+   - **Android:** open Expo Go and scan the QR code in the terminal
+   - **iOS:** scan the QR code with the Camera app (phone and laptop on the same Wi-Fi)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   Edit a file, save, and the change shows up on your phone in a second or two.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Docs
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Expo (SDK 54): https://docs.expo.dev/versions/v54.0.0/
+- Supabase with Expo / React Native: https://supabase.com/docs/guides/getting-started/tutorials/with-expo-react-native

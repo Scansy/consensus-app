@@ -1,39 +1,44 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
 # macOS
 .DS_Store
 *.pem
 
-# local env files
+# local env files (keys live here; .env.example is committed as a template)
 .env
-.env.*
-!.env.example
+.env*.local
 
-# === frontend (Expo) ===
-node_modules/
-frontend/.expo/
-frontend/dist/
-frontend/web-build/
-frontend/expo-env.d.ts
-frontend/.kotlin/
-frontend/*.orig.*
-frontend/*.jks
-frontend/*.p8
-frontend/*.p12
-frontend/*.key
-frontend/*.mobileprovision
-frontend/.metro-health-check*
-frontend/npm-debug.*
-frontend/yarn-debug.*
-frontend/yarn-error.*
-frontend/*.tsbuildinfo
-frontend/app-example
-frontend/ios
-frontend/android
+# typescript
+*.tsbuildinfo
 
-# === backend (FastAPI) ===
-backend/__pycache__/
-backend/**/__pycache__/
-backend/*.pyc
-backend/.venv/
-backend/venv/
-backend/.pytest_cache/
-backend/*.egg-info/
+app-example
+
+# generated native folders
+/ios
+/android
