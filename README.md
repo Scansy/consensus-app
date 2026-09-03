@@ -27,7 +27,8 @@ This is a plain Expo project. Everything lives at the repo root:
    ```
 
 2. Create your env file from the template and paste in the Supabase keys
-   (get them from whoever created the Supabase project — Project Settings > API):
+   (get them from the Supabase dashboard: your project > Connect > Framework —
+   you need to be invited to the project first):
 
    ```bash
    cp .env.example .env
@@ -35,7 +36,7 @@ This is a plain Expo project. Everything lives at the repo root:
 
    ```
    EXPO_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-   EXPO_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+   EXPO_PUBLIC_SUPABASE_KEY=your-key
    ```
 
 3. Start the dev server:
